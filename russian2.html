@@ -1,0 +1,110 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="russian2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Russian</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="innercircle">
+            <div class="circle">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+            <div class="circle">5</div>
+            <div class="circle">6</div>
+
+        </div>
+
+        <div style="visibility:hidden;background: red;text-align: center" id="message">
+            Please click a circle
+        </div>
+
+        <div id="shoot">
+            Fire    
+        </div>  
+        
+    </div>
+    <script type="text/javascript">
+        Math.floor((Math.random() * 6) + 1);
+        console.log(Math.floor((Math.random() * 6) + 1));
+        var circle;
+
+
+
+        document.getElementById("shoot").addEventListener('click', function () {
+            // console.log(circle);
+
+            if (circle == undefined) {
+                document.getElementById("message").style.visibility = 'visible';
+
+                return
+            }
+
+
+
+            randomNumber = Math.floor((Math.random() * 6) + 1);
+            if (circle == randomNumber) {
+                alert('game over');
+                myInterval = setInterval(changeBackground, 400)
+
+
+            } else {
+                console.log('play again')
+            }
+        })
+
+        var circles = document.getElementsByClassName("circle");
+
+        for (var i = 0; i < circles.length; i++) {
+            circles[i].addEventListener('click', function (event) {
+                circle = event.target.innerText;
+                console.log(circle);
+                event.target.style.background = "black"
+
+            })
+        }
+
+        var choice = true; 
+        var timer = 0; 
+        var myInterval;
+        function changeBackground() {
+            if (choice == true) {
+                document.getElementById('main').style.background = 'white';
+            } else {
+                document.getElementById('main').style.background = 'brown';
+            }
+            choice = !choice;
+            timer++;
+            if (timer == 6) clearInterval(myInterval);
+
+
+
+
+        }
+
+
+
+
+
+        // var nos = 0;
+
+        // function noIncrement() {
+        //     nos++;
+        //     console.log('The new nos is ', nos);
+        //     if (nos == 10) {
+        //         clearInterval(myInterval);
+        //     }
+        // }
+        // var myInterval = setInterval(noIncrement, 1000);
+
+    </script>
+
+</body>
+
+</html>

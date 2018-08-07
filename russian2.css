@@ -1,0 +1,49 @@
+#main{
+    background-color: brown;
+    height: 500px;
+    padding-top: 50px;
+}
+
+.white {
+    background-color:white;
+}
+
+
+#innercircle {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    
+}
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    background-color: rgb(64, 185, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+}
+#shoot {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: rgb(247, 0, 255);
+    color: white;
+    font-size: 26px;
+    line-height: 50px;
+    margin: 0px auto;
+    text-transform: uppercase;
+    color: rgb(129, 24, 24);
+    text-align: center;
+    cursor: pointer;
+
+}
+button {
+    display: flex;
+
+}
